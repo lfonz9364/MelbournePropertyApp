@@ -23,12 +23,13 @@
 
 .login-btn{
   background-color: white;
-  border: 1px solid grey;
+  border: none;
   border-radius: 5px;
   height: 30px;
   width: 50px;
   color: grey;
-
+  float: right;
+  margin: 37px 37px 0 0;
 }
 
 .nav-li-item{
@@ -41,19 +42,15 @@
 
 
 .nav-li{
-  display: flex;
+  display: inline-flex;
   align-items: center;
   padding-left: 0;
   margin: 0;
 }
 
-.login-btn{
-  justify-content: space-between;
-}
 
-
-.login-btn:hover{
-  background-color:#ecf0f1;
+.login-btn:hover, .nav-li-item:hover{
+  color: #34495e;
 }
 
 .hero{
@@ -131,6 +128,7 @@
   background-color: rgb(37,175,190);
   background-size: contain;
   min-height: 600px;
+
 }
 
 h3{
@@ -138,7 +136,26 @@ h3{
 }
 
 .ba-img{
-  padding-top: 50px;
+  padding-top: 25px;
   width: 600px;
   border: none;
+  display: inline-block;
+}
+
+.signup-btn{
+  background-color: rgba(255,255,255,0.3);
+  border: none;
+  margin: 5px;
+  color: #ecf0f1;
+  border-radius: 10px;
+}
+
+.signup-btn:active, .signup-btn:hover{
+  background-color: #ecf0f1;
+  color: black;
+}
+
+.info-updt > h1{
+  display: inline-flex;
+  color: white;
 }
