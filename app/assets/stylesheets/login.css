@@ -1,0 +1,39 @@
+#logo{
+  width: 100px;
+}
+
+.pure-menu, .pure-menu-horizontal, .pure-menu-scrollable, .pure-menu-list{
+  display: -webkit-flex;
+}
+
+.pure-menu-item{
+   -webkit-align-items: center;
+}
+
+.signup-box{
+  border: 1px solid black;
+  max-width: 300px;
+  text-align: center;
+}
+
+.signup-input, .facebook-login-btn, .google-login-btn{
+  margin: 5px;
+}
+
+.login-btn{
+  background-color: white;
+  border: 1px solid grey;
+  border-radius: 5px;
+  height: 30px;
+  width: 50px;
+  color: grey;
+
+}
+
+.login-btn:hover{
+  background-color:#ecf0f1;
+}
+
+.hero{
+
+}
