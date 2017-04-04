@@ -2,18 +2,19 @@
   width: 100px;
 }
 
-.pure-menu, .pure-menu-horizontal, .pure-menu-scrollable, .pure-menu-list{
-  display: -webkit-flex;
-}
 
-.pure-menu-item{
-   -webkit-align-items: center;
-}
 
 .signup-box{
-  border: 1px solid black;
+
   max-width: 300px;
   text-align: center;
+  padding: 5px;
+  border-radius: 19px;
+}
+
+.signup-container{
+  display: flex;
+  justify-content: center;
 }
 
 .signup-input, .facebook-login-btn, .google-login-btn{
@@ -30,10 +31,104 @@
 
 }
 
+.nav-li-item{
+  text-decoration: none;
+  color: #7f8c8d;
+  display: inline;
+  padding: 0 10px 0 10px;
+}
+
+
+.nav-li{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 0;
+  margin: 0;
+}
+
+.login-btn{
+  justify-content: flex-end;
+}
+
+
 .login-btn:hover{
   background-color:#ecf0f1;
 }
 
 .hero{
+  background-image: url("hero-img.jpg");
+  background-size: cover;
+  min-height: 600px;
+  font-family: 'Catamaran', sans-serif;
+  padding: 10px;
+  color: white;
+}
 
+.hero-left{
+  max-width: 300px;
+  margin: 0;
+}
+
+.signup-input{
+  height: 33px;
+  width: 83px;
+  border: none;
+  border-radius: 5px;
+  padding-left: 8px;
+  outline: thin;
+}
+
+.signup-input1{
+  height: 33px;
+  width: 190px;
+  border: none;
+  border-radius: 5px;
+  padding-left: 8px;
+  outline: thin;
+  margin-top: 15px;
+}
+
+.sn-logo{
+  font-size: 20px;
+  padding: 10px;
+}
+
+.facebook-login-btn{
+  background-color: #3B5998;
+  border: none;
+  padding: 10px;
+  color: white;
+  border-radius: 5px;
+
+}
+
+.spliter{
+  width: 200px;
+  border: 0.1px solid;
+  height: 0.1px;
+}
+
+.google-login-btn{
+  background-color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  width: 196px;
+  color: black;
+}
+
+.sn-logo2{
+  width:17px;
+  padding-right: 12px;
+}
+
+.title{
+  margin:  0 -19.33px 0 0;
+}
+
+.slide{
+  background-image: url("background-img2.jpg");
+  background-size: contain;
+  min-height: 600px;
 }
