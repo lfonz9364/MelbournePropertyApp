@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
+
+  get '/users', to: 'users#new'
+  post '/users', to: 'users#show'
+
   get '/login', to: 'sessions#new'
-  post '/session', to: 'sessions#create'
-  delete '/session', to: 'sessions#destroy'
+  post '/sessions', to: 'sessions#create'
+  delete '/sessions', to: 'sessions#destroy'
 
   root 'pages#home'
   namespace :api do
