@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   end
 
   resources :pages
+  get '/properties/test', to: 'properties#test'
 end
