@@ -10,10 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170404013329) do
+ActiveRecord::Schema.define(version: 20170404022140) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "favourites", force: :cascade do |t|
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_favourites_on_user_id", using: :btree
+  end
+
+  create_table "properties", force: :cascade do |t|
+    t.string   "category"
+    t.string   "suburb"
+    t.string   "address"
+    t.decimal  "location"
+    t.string   "status"
+    t.integer  "car_space"
+    t.integer  "bike_space"
+    t.string   "town_planning_permit"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "first_name"
@@ -24,4 +44,5 @@ ActiveRecord::Schema.define(version: 20170404013329) do
     t.datetime "updated_at",      null: false
   end
 
+  add_foreign_key "favourites", "users"
 end
