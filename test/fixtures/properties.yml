@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  category: MyString
+  suburb: MyString
+  address: MyString
+  location: 9.99
+  status: MyString
+  car_space: 1
+  bike_space: 1
+  town_planning_permit: MyString
+
+two:
+  category: MyString
+  suburb: MyString
+  address: MyString
+  location: 9.99
+  status: MyString
+  car_space: 1
+  bike_space: 1
+  town_planning_permit: MyString
