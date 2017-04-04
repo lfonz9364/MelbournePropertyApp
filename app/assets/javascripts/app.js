@@ -14,7 +14,6 @@ function getProperty() {
     }).done( function(data){
       console.log(data);
 
-
       data.forEach(function(property) {
 
         var source = $('#property_template').html();  //gets the template
