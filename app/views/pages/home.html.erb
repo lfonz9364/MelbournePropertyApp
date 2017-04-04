@@ -1,28 +1,107 @@
 
-<nav class="home-menu pure-menu pure-menu-horizontal pure-menu-scrollable">
-  <a href="" ><img src="logo.png" alt="" id="logo"></a>
-  <ul class="pure-menu-list">
-    <div class="pure-menu-item"><a href="" class="pure-menu-link">Home</a></div>
-    <div class="pure-menu-item"><a href="" class="pure-menu-link">About</a></div>
-    <button class="login-btn">login</button>
+<nav>
+  <ul class="nav-li">
+    <a href="" ><img src="logo.png" alt="" id="logo"></a>
+    <a href="#" class="nav-li-item">Home</a>
+    <a href="#" class="nav-li-item">About</a>
+
   </ul>
+  <button class="login-btn" >login</button>
 </nav>
 
 
 <div class="hero">
-  <h1>Chattels</h1>
-  <h3>Melbourne's leading resource for property development</h3>
-
-  <div class="signup-box">
-    <form action="">
-      <h3>Sign up today</h3>
-      <input type="text" placeholder="Firstname" name="firstname" class="signup-input">
-      <input type="test" placeholder="lastname" name="lastname" class="signup-input">
-      <input type="email" placeholder= "Email" name="email" class="signup-input">
-      <input type="password" placeholder="set passcode" name="password" class="signup-input">
-    </form>
-    <button class="facebook-login-btn">Sign up with Facebook</button>
-    <button class="google-login-btn">Sign up with Google</button>
+  <div class="hero-left">
+    <h1 class="title">Chattel</h1>
+    <h3>Melbourne's leading resource for property development</h3>
   </div>
-
+  <div class="signup-container">
+    <div class="signup-box">
+      <form action="">
+        <h3>Sign up today</h3>
+        <input type="text" placeholder="Firstname" name="firstname" class="signup-input">
+        <input type="test" placeholder="Lastname" name="lastname" class="signup-input">
+        <input type="email" placeholder= "Email" name="email" class="signup-input1">
+        <input type="password" placeholder="set passcode" name="password" class="signup-input1">
+        <br>
+        <button class="signup-btn">sign up</button>
+      </form>
+      <hr class="spliter">
+      <button class="facebook-login-btn"><b class="sn-logo">f</b> sign up with Facebook</button>
+      <button class="google-login-btn"><img src="google_icon.png" alt="" class="sn-logo2"> sign up with Google</button>
+    </div>
+  </div>
 </div>
+
+<div class="slide">
+  <img src="ba-img.png" alt="" class="ba-img">
+  <span class="info-updt">
+    <h1>Deliver the latest data for</h1>
+    <h1>
+      <a href="" class="typewrite" data-period="2000" data-type='[ "house buyers", "investors", " land developers", "future planner" ]'>
+        <span class="wrap"></span>
+      </a>
+    </h1>
+  </span>
+</div>
+
+
+
+<script>
+var TxtType = function(el, toRotate, period) {
+      this.toRotate = toRotate;
+      this.el = el;
+      this.loopNum = 0;
+      this.period = parseInt(period, 10) || 2000;
+      this.txt = '';
+      this.tick();
+      this.isDeleting = false;
+  };
+
+  TxtType.prototype.tick = function() {
+      var i = this.loopNum % this.toRotate.length;
+      var fullTxt = this.toRotate[i];
+
+      if (this.isDeleting) {
+      this.txt = fullTxt.substring(0, this.txt.length - 1);
+      } else {
+      this.txt = fullTxt.substring(0, this.txt.length + 1);
+      }
+
+      this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+      var that = this;
+      var delta = 200 - Math.random() * 100;
+
+      if (this.isDeleting) { delta /= 2; }
+
+      if (!this.isDeleting && this.txt === fullTxt) {
+      delta = this.period;
+      this.isDeleting = true;
+      } else if (this.isDeleting && this.txt === '') {
+      this.isDeleting = false;
+      this.loopNum++;
+      delta = 500;
+      }
+
+      setTimeout(function() {
+      that.tick();
+      }, delta);
+  };
+
+  window.onload = function() {
+      var elements = document.getElementsByClassName('typewrite');
+      for (var i=0; i<elements.length; i++) {
+          var toRotate = elements[i].getAttribute('data-type');
+          var period = elements[i].getAttribute('data-period');
+          if (toRotate) {
+            new TxtType(elements[i], JSON.parse(toRotate), period);
+          }
+      }
+      // INJECT CSS
+      var css = document.createElement("style");
+      css.type = "text/css";
+      css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+      document.body.appendChild(css);
+  };
+</script>
