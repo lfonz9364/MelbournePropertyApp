@@ -2,13 +2,13 @@
 //search Property
 function getProperty() {
   var searchTerm = $('.search-input').val();
-  var statusFilter = $('.').val()
+    var statusSearch = $('.search-input').val();
   $.ajax({
-    url: 'api/properties',
+    url: 'https://data.melbourne.vic.gov.au/resource/xt73-zf4j.json',
     data: {
       "$limit" : 100,
-      status: statusFilter,
-      clue_small_area: searchTerm
+      status: "APPLIED",
+      clue_small_area: "Port Melbourne"
     }
 
 
