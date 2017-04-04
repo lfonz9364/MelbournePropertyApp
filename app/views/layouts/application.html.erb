@@ -14,10 +14,16 @@
   </head>
 
   <body>
+    <% if logged_in? %>
+      logged in as <%= current_user.first_name %>
+        <%= form_tag '/session', method: :delete do %>
+        <button>logout</button>
+      <% end %>
+    <% end %>
     <%= render 'layouts/header' %>
-    
+
     <div class="content-wrapper">
-      
+
     <%= yield %>
     </div>
 
