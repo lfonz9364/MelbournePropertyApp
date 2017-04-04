@@ -1,9 +1,9 @@
-<form action="/session" method="post">
-  <label for="">email</label>
-  <input name="email" type="text">
+<h1>login</h1>
 
-  <label for="">password</label>
-  <input name="password" type="password">
-  <button>login</button>
-  
-</form>
+<%= form_tag '/session', method: 'post' do %>
+<label for="">email</label>
+<input type="text" name="email">
+<label for="">password</label>
+<input type="password" name="password">
+<button>login</button>
+<% end %>

@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
+  get '/login', to: 'sessions#new'
+  post '/session', to: 'sessions#create'
+  delete '/session', to: 'sessions#destroy'
 
-  get '/sessions/login', to: 'session#new'
-  post '/sessions', to: 'sessions#create'
-  delete '/sessions', to: 'session#destroy'
-
-  
   root 'pages#home'
   namespace :api do
     resources :properties
