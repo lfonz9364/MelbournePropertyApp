@@ -15,4 +15,5 @@ class User < ApplicationRecord
     cost = Active::SecurePassword.min ? BCript::Engine::Min_COST :
           BCript::Password.create(string, cost: cost)
   end
+  has_many :favourites
 end

@@ -2,10 +2,12 @@ Rails.application.routes.draw do
 
   get '/users', to: 'users#new'
   post '/users', to: 'users#show'
+  post '/users', to: 'users#destroy'
 
   get '/login', to: 'sessions#new'
-  post '/sessions', to: 'sessions#create'
-  delete '/sessions', to: 'sessions#destroy'
+  get '/login', to: 'sessions#login'
+  post '/session', to: 'sessions#create'
+  delete '/session', to: 'sessions#destroy'
 
   root 'pages#home'
   namespace :api do
@@ -13,4 +15,5 @@ Rails.application.routes.draw do
   end
 
   resources :pages
+  get '/properties/test', to: 'properties#test'
 end
