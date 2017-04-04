@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170404022140) do
+ActiveRecord::Schema.define(version: 20170404051546) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,8 @@ ActiveRecord::Schema.define(version: 20170404022140) do
     t.string   "town_planning_permit"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
+    t.integer  "favourite_id"
+    t.index ["favourite_id"], name: "index_properties_on_favourite_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -45,4 +47,5 @@ ActiveRecord::Schema.define(version: 20170404022140) do
   end
 
   add_foreign_key "favourites", "users"
+  add_foreign_key "properties", "favourites"
 end
