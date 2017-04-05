@@ -6,7 +6,7 @@
 
 .signup-box{
 
-  max-width: 300px;
+  max-width: 380px;
   text-align: center;
   padding: 5px;
   border-radius: 19px;
@@ -69,21 +69,23 @@
 
 .signup-input{
   height: 33px;
-  width: 83px;
+  width: 132px;
   border: none;
   border-radius: 5px;
   padding-left: 8px;
   outline: thin;
+  color: black;
 }
 
 .signup-input1{
   height: 33px;
-  width: 190px;
+  width: 284px;
   border: none;
   border-radius: 5px;
   padding-left: 8px;
   outline: thin;
   margin-top: 15px;
+  color: black;
 }
 
 .sn-logo{
@@ -97,7 +99,7 @@
   padding: 10px;
   color: white;
   border-radius: 5px;
-
+  width:288px;
 }
 
 .spliter{
@@ -111,7 +113,7 @@
   border: none;
   padding: 10px;
   border-radius: 5px;
-  width: 196px;
+  width: 288px;
   color: black;
 }
 
@@ -127,8 +129,8 @@
 .slide{
   background-color: rgb(37,175,190);
   background-size: contain;
-  min-height: 600px;
-
+  min-height: 500px;
+  text-align: center;
 }
 
 h3{
@@ -137,9 +139,9 @@ h3{
 
 .ba-img{
   padding-top: 25px;
-  width: 600px;
+  max-width: 500px;
   border: none;
-  display: inline-block;
+
 }
 
 .signup-btn{
@@ -157,5 +159,12 @@ h3{
 
 .info-updt > h1{
   display: inline-flex;
+  justify-content: flex-end;
+  color: white;
+  font-family: 'Catamaran', sans-serif;
+}
+
+.typewrite{
+  text-decoration-color: rgba(255,255,255,0.4);
   color: white;
 }
