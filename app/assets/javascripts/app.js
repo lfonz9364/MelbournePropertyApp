@@ -11,6 +11,10 @@ function getProperty() {
       clue_small_area: searchTerm
     }
   }).done( function(data){
+
+    if (data.length > 0) {
+
+    }
     var locations = [];
     for (var i = 0; i < data.length; i++) {
       var id = data[i].property_id
