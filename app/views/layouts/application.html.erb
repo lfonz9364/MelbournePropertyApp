@@ -16,19 +16,17 @@
 
   <body>
     <% if logged_in? %>
-      logged in as <%= current_user.first_name %>
-        <%= form_tag '/session', method: :delete do %>
-        <button>logout</button>
+      <%= form_tag '/session', method: :delete do %>
+        <nav class="login-nav">
+          <a href="" id='logo-login'><%= image_tag("logo.png", id: "logo") %></a>
+          <button class="logout-btn">Logout</button>
+        </nav>
       <% end %>
     <% end %>
-    <%= render 'layouts/header' %>
 
     <div class="content-wrapper">
-
-    <%= yield %>
+      <%= yield %>
     </div>
 
-
-    <%= render 'layouts/footer' %>
   </body>
 </html>
