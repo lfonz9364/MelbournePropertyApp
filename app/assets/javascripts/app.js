@@ -14,12 +14,14 @@ function getProperty() {
     }).done( function(data){
       console.log(data);
 
+
       data.forEach(function(property) {
 
         var source = $('#property_template').html();  //gets the template
-        console.log(source)
+
         var template = Handlebars.compile(source)  //turns template string
         var html = template(property)
+
         $('.wrapper').append(html)
 
       });
@@ -28,9 +30,12 @@ function getProperty() {
   };
 
   $(document).ready(function() {
-    $('.wrapper').append("")//clear page before searching again
+  
     $(".search-btn").click(function(event){
       event.preventDefault();
+      if ($('.wrapper').children('.property').length > 0) {
+        $('.wrapper').children('.property').remove();
+      }
         getProperty();
+      })
     });
-});
