@@ -53,6 +53,7 @@
 }
 
 .dash-console{
+  display: -webkit-flex;
   display: flex;
 }
 
