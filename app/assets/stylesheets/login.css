@@ -30,6 +30,7 @@
   color: grey;
   float: right;
   margin: 37px 37px 0 0;
+  text-decoration: none;
 }
 
 .nav-li-item{
@@ -166,5 +167,84 @@ h3{
 
 .typewrite{
   text-decoration-color: rgba(255,255,255,0.4);
+  color: white;
+}
+
+.login-pg{
+  min-height: 1000px;
+  background: #00c6ff;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #0072ff, #00c6ff);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #0072ff, #00c6ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  display: flex;
+  justify-content: center;
+}
+
+.login-container{
+  font-family: 'Catamaran', sans-serif;
+  text-align: center;
+  padding: 5px;
+  height: 430px;
+  width: 283px;
+  border: 1px solid rgba(255,255,255,0.5);
+  border-radius: 6px;
+  margin-top: 60px;
+  color: white;
+}
+
+.login-input1, .login-input2{
+  margin-bottom: 10px;
+  background-color: rgba(0,0,0,0.2);
+  border: none;
+  border-radius: 5px;
+  height: 35px;
+  width: 228px;
+  color: white;
+  padding-left: 8px;
+}
+
+.login-input1::-webkit-input-placeholder {
+  color: rgba(255,255,255,0.8);
+  background-image: url('User-96.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+.login-input2::-webkit-input-placeholder {
+  color: rgba(255,255,255,0.8);
+  background-image: url('Password-96.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+.login-p-btn{
+  width: 228px;
+  height: 36px;
+  margin-top: 50px;
+  border: none;
+  background-color: white;
+  color: #0072ff;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.login-img{
+  width: 70px;
+  margin-top: -39px;
+  border: 1px solid rgba(255,255,255,0.6);
+  border-radius: 100%;
+}
+
+.login-p-btn:hover{
+  background-color: #0072ff;
+  color: white;
+}
+.login-p-btn:active{
+  background-color: #3498db;
+}
+
+.back-btn{
+  margin-top: 520px;
   color: white;
 }
