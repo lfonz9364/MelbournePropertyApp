@@ -2,39 +2,20 @@
 
 
 <div class="content-wrapper">
-
-<form id="searchForm" class="" action="users/show" >
-
-  <input type="radio" name="search-status" value="APPLIED" checked> Applied<br>
-  <input type="radio" name="search-status" value="MOOTED"> Mooted<br>
-  <input type="radio" name="search-status" value="ABANDONED"> Abandoned <br>
-  <input type="radio" name="search-status" value="COMPLETED"> Completed <br>
-  <input type="radio" name="search-status" value="APPROVED"> Approved <br>
-  <input type="radio" name="search-status" value="UNDER CONSTRUCTION"> Under Construction <br>
-
-
-  <input type="text" class="search-input">
-  <input type="button" class="search-btn" value="Search">
-</form>
-
-<div id="map" style="width: 500px; height: 400px;"></div>
-<div class="wrapper">
-</div>
-
-
-
-
-<script id="property_template" type="text/x-handlebars-template">
-
-
-<div class="content-wrapper">
-  <div class="">
+  <div class="dash-console">
     <nav id="profile-content">
-      <p href="" class="nav-li-item profile-item">Welcome Back! <%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize %></p>
+      <p  class="nav-li-item profile-item">Welcome Back! <%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize %></p>
       <a href="" class="nav-li-item profile-item">Profile</a>
       <a href="" class="nav-li-item profile-item">Saves</a>
       <a href="" class="nav-li-item profile-item">Settings</a>
     </nav>
+
+    <div id="search-bar">
+      <form action="users/show">
+        <input type="text" class="search-input">
+        <input type="button" class="search-btn" value="Search">
+      </form>
+    </div>
 
     <div id="filter">
       <form id="searchForm" class="" action="users/show" >
@@ -47,12 +28,6 @@
         <input type="checkbox" name="search-status" value="UNDER CONSTRUCTION"> Under Construction <br>
       </form>
     </div>
-
-
-    <form action="users/show">
-      <input type="text" class="search-input">
-      <input type="button" class="search-btn" value="Search">
-    </form>
   </div>
 
   <div class="wrapper">
@@ -61,48 +36,48 @@
 
   <script id="property_template" type="text/x-handlebars-template">
 
-  <div class="property" data-id="{{ property_id }}">
-    <div class="field">
-      <span>Address: </span>{{street_address}}
-    </div>
-
-    <div class="field">
-      <span>Status: </span>{{ status }}
-    </div>
-
-    {{#if resi_dwelling}}
+    <div class="property" data-id="{{ property_id }}">
       <div class="field">
-        <span>Residential Dwellings: </span>{{ resi_dwelling }}
+        <span>Address: </span>{{street_address}}
       </div>
 
-      {{else}}
-      {{/if}}
+      <div class="field">
+        <span>Status: </span>{{ status }}
+      </div>
 
-      {{#if one_bdrm_dwe}}
+      {{#if resi_dwelling}}
         <div class="field">
-          <span>No of 1 Bedrooms: </span>{{ one_bdrm_dwe }}
+          <span>Residential Dwellings: </span>{{ resi_dwelling }}
         </div>
 
         {{else}}
         {{/if}}
 
-      {{#if two_bdrm_dwe}}
+        {{#if one_bdrm_dwe}}
+          <div class="field">
+            <span>No of 1 Bedrooms: </span>{{ one_bdrm_dwe }}
+          </div>
+
+          {{else}}
+          {{/if}}
+
+        {{#if two_bdrm_dwe}}
+          <div class="field">
+            <span>No of 2 Bedrooms: </span>{{ two_bdrm_dwe }}
+          </div>
+
+          {{else}}
+          {{/if}}
+
+      {{#if town_planning_application_no}}
         <div class="field">
-          <span>No of 2 Bedrooms: </span>{{ two_bdrm_dwe }}
+          <span>Planning Number: </span>{{ town_planning_application_no }}
         </div>
 
         {{else}}
         {{/if}}
 
-    {{#if town_planning_application_no}}
-      <div class="field">
-        <span>Planning Number: </span>{{ town_planning_application_no }}
-      </div>
-
-      {{else}}
-      {{/if}}
-
-  </div>
+    </div>
   </script>
 
 </div>

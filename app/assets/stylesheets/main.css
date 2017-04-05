@@ -30,15 +30,32 @@
 #searchForm{
   font-family: 'Catamaran', sans-serif;
   border: 1px solid black;
-  max-width: 160px;
+  max-width: 220px;
+  padding: 5px;
+  border-radius: 5px;
+}
 
+#searchForm > input {
+  margin: 10px;
 }
 
 #profile-content{
+  margin: 10px;
    max-width: 220px;
    border: 1px solid black;
+   max-height: 160px;
+   border-radius: 9px;
 }
 
 .profile-item{
-  display:flex;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.dash-console{
+  display: flex;
+}
+
+#search-bar {
+ justify-content: center;
 }
