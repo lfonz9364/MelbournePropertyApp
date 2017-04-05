@@ -56,7 +56,7 @@
 .hero{
   background-image: url("hero-img.jpg");
   background-size: cover;
-  min-height: 500px;
+  min-height: 530px;
   font-family: 'Catamaran', sans-serif;
   padding: 10px;
   color: white;
