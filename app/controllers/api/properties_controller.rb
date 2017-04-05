@@ -1,8 +1,9 @@
 class Api::PropertiesController < ApplicationController
-  belongs_to :favourite
 
   def show
-    render json: Property.all
+     render 'sessions/show'
   end
+
+  def 
 
 end
