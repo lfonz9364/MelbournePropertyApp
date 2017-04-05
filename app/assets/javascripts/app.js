@@ -33,9 +33,12 @@ function getProperty() {
       $('.wrapper').append(html)
     });
 
+    }).done( function(data){
+
   });
 
 };
+
 
 $(document).ready(function() {
 
@@ -47,6 +50,25 @@ $(document).ready(function() {
     getProperty();
   })
 });//document ready function finished
+
+
+        var template = Handlebars.compile(source);  //turns template string
+        var html = template(property);
+
+        $('.wrapper').append(html);
+      });
+
+      $('.star').on('click', function(event){
+        key = $(this).closest('.property').data('id');
+        $.ajax({
+          url: '/api/properties',
+          method: 'post',
+          data: {
+            development_key: key
+          }
+        });
+      });
+    });
 
 
 function initMap(locations) {
