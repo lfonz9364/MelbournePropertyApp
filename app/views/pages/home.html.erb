@@ -1,7 +1,7 @@
 
 <nav>
   <ul class="nav-li">
-    <a href="" ><img src="logo.png" alt="" id="logo"></a>
+    <a href=""><%= image_tag("logo.png", id: "logo") %></a>
     <a href="#" class="nav-li-item">Home</a>
     <a href="#" class="nav-li-item">About</a>
 
@@ -29,18 +29,18 @@
       </form>
       <hr class="spliter">
       <button class="facebook-login-btn"><b class="sn-logo">f</b> sign up with Facebook</button>
-      <button class="google-login-btn"><img src="google_icon.png" alt="" class="sn-logo2"> sign up with Google</button>
+      <button class="google-login-btn"><%= image_tag("google_icon.png", class: "sn-logo2") %> sign up with Google</button>
     </div>
   </div>
 </div>
 
 <div class="slide">
-  <img src="ba-img.png" alt="" class="ba-img">
+  <%= image_tag("ba-img.png", class: "ba-img") %>
   <br>
   <span class="info-updt">
     <h1>Deliver the latest data for</h1>
     <h1>
-      <a href="" class="typewrite" data-period="2000" data-type='[ "home buyers", "propety investors", " land developers", "future planner" ]'>
+      <a href="" class="typewrite" data-period="2000" data-type='[ "home buyers", "property investors", " land developers", "future planner" ]'>
         <span class="wrap"></span>
       </a>
     </h1>

@@ -1,0 +1,66 @@
+.content-wrapper{
+  font-family: 'Catamaran', sans-serif;
+}
+
+#logo-login,.logout-btn{
+  display: inline;
+}
+
+.logout-btn{
+  float: right;
+  margin: 30px;
+  margin-right: 80px;
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  height: 30px;
+  width: 50px;
+  color: grey;
+}
+
+.logout-btn:hover{
+  color: #34495e;
+}
+
+#filter{
+  display:flex;
+  justify-content: flex-end;
+  margin: 20px;
+}
+#searchForm{
+  font-family: 'Catamaran', sans-serif;
+  border: 1px solid black;
+  max-width: 220px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+#searchForm > input {
+  margin: 10px;
+}
+
+#profile-content{
+  margin: 10px;
+   max-width: 220px;
+   border: 1px solid black;
+   max-height: 160px;
+   border-radius: 9px;
+}
+
+.profile-item{
+  display: flex;
+  justify-content: flex-start;
+}
+
+.dash-console{
+  display: flex;
+}
+
+#search-bar {
+ justify-content: center;
+}
+
+.map {
+  width: 500px;
+  height: 400px;
+}

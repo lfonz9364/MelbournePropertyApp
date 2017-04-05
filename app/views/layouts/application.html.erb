@@ -10,25 +10,24 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBuPHNanaTiObqRgkX-rDqK_UEFBxWLYfM"
+      type="text/javascript"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
   </head>
 
   <body>
     <% if logged_in? %>
-      logged in as <%= current_user.first_name %>
-        <%= form_tag '/session', method: :delete do %>
-        <button>logout</button>
+      <%= form_tag '/session', method: :delete do %>
+        <nav class="login-nav">
+          <a href="" id='logo-login'><%= image_tag("logo.png", id: "logo") %></a>
+          <button class="logout-btn">Logout</button>
+        </nav>
       <% end %>
     <% end %>
-    <%= render 'layouts/header' %>
 
     <div class="content-wrapper">
-
-    <%= yield %>
+      <%= yield %>
     </div>
 
-
-    <%= render 'layouts/footer' %>
   </body>
 </html>

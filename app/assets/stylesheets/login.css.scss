@@ -2,8 +2,6 @@
   width: 100px;
 }
 
-
-
 .signup-box{
 
   max-width: 380px;
@@ -55,9 +53,9 @@
 }
 
 .hero{
-  background-image: url("hero-img.jpg");
+  background-image: image-url("hero-img.jpg");
   background-size: cover;
-  min-height: 530px;
+  min-height: 538px;
   font-family: 'Catamaran', sans-serif;
   padding: 10px;
   color: white;
@@ -151,6 +149,7 @@ h3{
   margin: 5px;
   color: #ecf0f1;
   border-radius: 10px;
+  width: 80px;
 }
 
 .signup-btn:active, .signup-btn:hover{

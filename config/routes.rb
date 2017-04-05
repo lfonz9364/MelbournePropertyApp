@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   delete '/session', to: 'sessions#destroy'
 
   get '/api/properties/show/:id', to: 'api/properties#show'
+  
   root 'pages#home'
   namespace :api do
     resources :properties
