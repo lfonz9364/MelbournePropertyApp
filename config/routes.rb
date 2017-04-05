@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
-  get '/users', to: 'users#new'
-  post '/users', to: 'users#show'
+  get '/users/new', to: 'users#new'
+  post '/users', to: 'users#create'
+
+
   post '/users', to: 'users#destroy'
 
   get '/login', to: 'sessions#new'

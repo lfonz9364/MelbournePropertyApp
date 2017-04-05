@@ -1,18 +1,20 @@
 <h1>Register For Account</h1>
 
 
-<%= form_for(@user) do |f| %>
-  <%= f.label :first_name %>
-  <%= f.text_field :first_name %>
+<form class="" action="/users" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
-  <%= f.label :last_name %>
-  <%= f.text_field :last_name %>
+  <label for="">First Name</label>
+  <input type="text" name="first_name">
 
-  <%= f.label :email %>
-  <%= f.email_field :email %>
+  <label for="">Last Name</label>
+  <input type="text" name="last_name">
 
-  <%= f.label :password %>
-  <%= f.password_field :password_digest %>
+  <label for="">Email</label>
+  <input type="text" name="email">
 
-  <%= f.submit "Create my account" %>
-<% end %>
+  <label for="">Password</label>
+  <input type="password" name="password" value="">
+
+  <button>Create account</button>
+</form>
