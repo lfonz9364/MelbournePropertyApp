@@ -5,65 +5,42 @@
 
 <form id="searchForm" class="" action="users/show" >
 
-  <input type="radio" name="search-status" value="APPLIED" checked> Applied<br>
-  <input type="radio" name="search-status" value="MOOTED"> Mooted<br>
-  <input type="radio" name="search-status" value="ABANDONED"> Abandoned <br>
-  <input type="radio" name="search-status" value="COMPLETED"> Completed <br>
-  <input type="radio" name="search-status" value="APPROVED"> Approved <br>
-  <input type="radio" name="search-status" value="UNDER CONSTRUCTION"> Under Construction <br>
-
+  <div id="filter">
+    <form id="searchForm" class="" action="users/show" >
+      <h3>Filter:</h3>
+      <input type="checkbox" name="search-status" value="APPLIED" checked> Applied<br>
+      <input type="checkbox" name="search-status" value="MOOTED"> Mooted<br>
+      <input type="checkbox" name="search-status" value="ABANDONED"> Abandoned <br>
+      <input type="checkbox" name="search-status" value="COMPLETED"> Completed <br>
+      <input type="checkbox" name="search-status" value="APPROVED"> Approved <br>
+      <input type="checkbox" name="search-status" value="UNDER CONSTRUCTION"> Under Construction <br>
+    </form>
+  </div>
 
   <input type="text" class="search-input">
   <input type="button" class="search-btn" value="Search">
 </form>
 
 <div id="map" style="width: 500px; height: 400px;"></div>
-<div class="wrapper">
-</div>
+<div class="wrapper"></div>
 
 
-
-
-<script id="property_template" type="text/x-handlebars-template">
-
-
-<div class="content-wrapper">
-  <div class="">
+<div>
     <nav id="profile-content">
       <p href="" class="nav-li-item profile-item">Welcome Back! <%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize %></p>
       <a href="" class="nav-li-item profile-item">Profile</a>
       <a href="" class="nav-li-item profile-item">Saves</a>
       <a href="" class="nav-li-item profile-item">Settings</a>
     </nav>
-
-    <div id="filter">
-      <form id="searchForm" class="" action="users/show" >
-        <h3>Filter:</h3>
-        <input type="checkbox" name="search-status" value="APPLIED" checked> Applied<br>
-        <input type="checkbox" name="search-status" value="MOOTED"> Mooted<br>
-        <input type="checkbox" name="search-status" value="ABANDONED"> Abandoned <br>
-        <input type="checkbox" name="search-status" value="COMPLETED"> Completed <br>
-        <input type="checkbox" name="search-status" value="APPROVED"> Approved <br>
-        <input type="checkbox" name="search-status" value="UNDER CONSTRUCTION"> Under Construction <br>
-      </form>
-    </div>
-
-
-    <form action="users/show">
-      <input type="text" class="search-input">
-      <input type="button" class="search-btn" value="Search">
-    </form>
-  </div>
-
-  <div class="wrapper">
-  </div>
+</div>
 
 
   <script id="property_template" type="text/x-handlebars-template">
 
-  <div class="property" data-id="{{ property_id }}">
+  <div class="property" data-id="{{ development_key }}">
     <div class="field">
       <span>Address: </span>{{street_address}}
+      <span class="star">&#9733;</span>
     </div>
 
     <div class="field">
