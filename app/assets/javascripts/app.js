@@ -1,7 +1,9 @@
 
 function getProperty() {
     var searchTerm = $('.search-input').val();
-    var searchStatus = $('.search-status').val();
+    var searchStatus = $("input[name='search-status']:checked").val();
+
+
     $.ajax({
       url: 'https://data.melbourne.vic.gov.au/resource/xt73-zf4j.json',
       data: {
@@ -30,7 +32,7 @@ function getProperty() {
   };
 
   $(document).ready(function() {
-  
+
     $(".search-btn").click(function(event){
       event.preventDefault();
       if ($('.wrapper').children('.property').length > 0) {
