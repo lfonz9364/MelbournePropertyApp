@@ -6,7 +6,7 @@
     <a href="#" class="nav-li-item">About</a>
 
   </ul>
-  <button class="login-btn" >login</button>
+  <a href="/login" class="login-btn" >login</a>
 </nav>
 
 
@@ -17,10 +17,11 @@
   </div>
   <div class="signup-container">
     <div class="signup-box">
-      <form action="">
+      <form action="/users" method="post">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
         <h3>Sign up today</h3>
-        <input type="text" placeholder="Firstname" name="firstname" class="signup-input">
-        <input type="test" placeholder="Lastname" name="lastname" class="signup-input">
+        <input type="text" placeholder="Firstname" name="first_name" class="signup-input">
+        <input type="text" placeholder="Lastname" name="last_name" class="signup-input">
         <input type="email" placeholder= "Email" name="email" class="signup-input1">
         <input type="password" placeholder="set passcode" name="password" class="signup-input1">
         <br>
