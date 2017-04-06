@@ -56,14 +56,15 @@ $(document).ready(function() {
   })
 
   $('.save').on('click', function(event){
-    console.log(favouriteProp);
-    $.ajax({
-      url: '/favourites/new',
-      method: 'post',
-      data: {
-        favourites: favouriteProp
-      }
-    });
+      $.ajax({
+        url: '/favourites/new',
+        method: 'post',
+        data: {
+          user_id: Number($('.id').data('id')),
+          favourites: favouriteProp
+          }
+      });
+
   });
 });
 
