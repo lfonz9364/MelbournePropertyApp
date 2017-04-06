@@ -23,14 +23,13 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = current_user
+    user = User.find(params[:id])
+    redirect_to '/users/edit'
   end
 
   def update
-    @user = User.find(current_user.id)
-    if @user.update(user_params)
-      bypass_sign_in(@user)
-      redirect_to '/show'
+    user = User.find(params[:id])
+    if user.update_attributes(user_params)
     else
       render 'edit'
     end
