@@ -6,7 +6,7 @@
         <%= image_tag('profile-pic.png', id: 'profile-pic' ) %>
         <p class="nav-li-item profile-item pi1">Welcome Back! <%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize %></p>
         <a href="" class="nav-li-item profile-item">Profile</a>
-        <a href="" class="nav-li-item profile-item">Saves</a>
+        <a href="" class="nav-li-item profile-item save">Saves</a>
         <a href="" class="nav-li-item profile-item">Settings</a>
       </nav>
 
@@ -47,19 +47,6 @@
   </div>
 </div>
 
-
-  <div>
-    <nav id="profile-content">
-      <p  class="nav-li-item profile-item">Welcome Back! <%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize %></p>
-      <a href="" class="nav-li-item profile-item">Profile</a>
-      <a href="" class="nav-li-item profile-item save">Saves</a>
-      <a href="" class="nav-li-item profile-item">Settings</a>
-    </nav>
-  </div>
-</div>
-
-<script id="property_template" type="text/x-handlebars-template">
->>>>>>> 6b0719f3731e0fc5cb2bf258e6efc6e8c4e49292
 
 <script id="property_template" type="text/x-handlebars-template">
   <div class="property" data-id="{{ development_key }}">
@@ -112,14 +99,15 @@
       $('#map').css("visibility","hidden");
       $('.wrapper').css("visibility","inherit");
     };
-
-<<<<<<< HEAD
-    if($(".toggle-input").prop('checked')== true){
-      $('#map').css("visibility","inherit");
-      $('.wrapper').css("visibility","hidden");
-    };
-  })
-
-=======
->>>>>>> 6b0719f3731e0fc5cb2bf258e6efc6e8c4e49292
+  });
 </script>
+
+
+
+  <!-- //
+  //
+  //   if($(".toggle-input").prop('checked')== true){
+  //     $('#map').css("visibility","inherit");
+  //     $('.wrapper').css("visibility","hidden");
+  //   };
+  // }) -->
