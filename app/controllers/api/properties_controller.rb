@@ -1,13 +1,7 @@
 class Api::PropertiesController < ApplicationController
 
   def show
-     render 'sessions/show'
-  end
-
-  def create
-    property = Property.new
-    property.development_key = params[:development_key]
-    property.save
+    render 'sessions/show'
   end
 
 end

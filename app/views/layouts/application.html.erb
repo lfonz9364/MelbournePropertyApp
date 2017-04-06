@@ -17,6 +17,7 @@
   <body>
     <% if logged_in? %>
       <%= form_tag '/session', method: :delete do %>
+      <input type="hidden" class="id" data-id=<%= current_user.id%> >
         <nav class="login-nav">
           <a href="" id='logo-login'><%= image_tag("logo.png", id: "logo") %></a>
           <button class="logout-btn">Logout</button>

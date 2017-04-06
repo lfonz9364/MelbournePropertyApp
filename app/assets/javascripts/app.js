@@ -1,5 +1,6 @@
 var favouriteProp = [];
 
+
 function getProperty() {
   var searchTerm = $('.search-input').val();
   var searchStatus = $("input[name='search-status']:checked").val();
@@ -61,6 +62,7 @@ $(document).ready(function() {
         url: '/favourites/new',
         method: 'post',
         data: {
+          user_id: Number($('.id').data('id')),
           favourites: favouriteProp
           }
       });
