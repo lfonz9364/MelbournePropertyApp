@@ -4,7 +4,7 @@ This site is currently hosted on Heroku [Link to Site](https://calm-beach-35487.
 
 ## Property Planning App Overview
 
-The
+The property planning app
 
 ## Data Sets
 
