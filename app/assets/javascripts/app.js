@@ -48,6 +48,28 @@ function getProperty() {
 };
 
 $(document).ready(function() {
+  $( function() {
+    var suburbs = [
+      "Carlton",
+      "Carlton North",
+      "Docklands",
+      "East Melbourne",
+      "Flemington",
+      "Jolimont",
+      "Kensington",
+      "Melbourne (CBD)",
+      "North Melbourne",
+      "Port Melbourne",
+      "Parkville",
+      "Southbank",
+      "South Wharf",
+      "South Yarra",
+      "West Melbourne"
+      ];
+    $( "#tags" ).autocomplete({
+        source: suburbs
+    });
+  });
 
   $(".search-btn").click(function(event){
     event.preventDefault();

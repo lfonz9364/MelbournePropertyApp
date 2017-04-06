@@ -11,7 +11,7 @@
       </nav>
 
       <div id="search-bar">
-        <input type="text" class="search-input">
+        <input type="text" id="tags" class="search-input">
         <button class="search-btn">Search</button>
       </div>
 
@@ -52,7 +52,6 @@
   <div class="property" data-id="{{ development_key }}">
     <div class="field">
       <span>Address: </span>{{street_address}}
-      <span class="star">&#9733;</span>
     </div>
 
     <div class="field">
@@ -61,7 +60,7 @@
 
     {{#if resi_dwelling}}
       <div class="field">
-        <span>Residential Dwellings: </span>{{ resi_dwelling }}
+        <span>No of Residential Dwellings: </span>{{ resi_dwelling }}
       </div>
     {{else}}
     {{/if}}
@@ -70,7 +69,6 @@
       <div class="field">
         <span>No of 1 Bedrooms: </span>{{ one_bdrm_dwe }}
       </div>
-
     {{else}}
     {{/if}}
 
@@ -81,14 +79,43 @@
     {{else}}
     {{/if}}
 
+    {{#if office_flr}}
+      <div class="field">
+        <span>Office Space: </span>{{ office_flr }}<sup>2</sup>
+      </div>
+    {{else}}
+    {{/if}}
+
+    {{#if retail_flr}}
+      <div class="field">
+        <span>Retail Space: </span>{{ retail_flr }}<sup>2</sup>
+      </div>
+    {{else}}
+    {{/if}}
+
+    {{#if bike_spaces}}
+      <div class="field">
+        <span>Bike spaces: </span>{{ bike_spaces }}
+      </div>
+    {{else}}
+    {{/if}}
+
+    {{#if car_spaces}}
+      <div class="field">
+        <span>Car Spaces: </span>{{ car_spaces }}
+      </div>
+    {{else}}
+    {{/if}}
+
     {{#if town_planning_application_no}}
       <div class="field">
         <span>Planning Number: </span>{{ town_planning_application_no }}
       </div>
     {{else}}
     {{/if}}
+
   </div>
-</script>
+  </script>
 
 <script>
    $('#map').css("visibility","hidden");
@@ -99,15 +126,10 @@
       $('#map').css("visibility","hidden");
       $('.wrapper').css("visibility","inherit");
     };
+
+  if($(".toggle-input").prop('checked')== true){
+      $('#map').css("visibility","inherit");
+      $('.wrapper').css("visibility","hidden");
+    };
   });
 </script>
-
-
-
-  <!-- //
-  //
-  //   if($(".toggle-input").prop('checked')== true){
-  //     $('#map').css("visibility","inherit");
-  //     $('.wrapper').css("visibility","hidden");
-  //   };
-  // }) -->
