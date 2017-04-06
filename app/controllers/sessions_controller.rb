@@ -12,6 +12,20 @@ class SessionsController < ApplicationController
     end
   end
 
+  def edit
+    @user = current_user
+  end
+
+  def update
+    @user = User.find(current_user.id)
+    if @user.update(user_params)
+      bypass_sign_in(@user)
+      redirect_to '/show'
+    else
+      render 'edit'
+    end
+  end
+
   def destroy
     session[:id] = nil
     redirect_to '/login'
