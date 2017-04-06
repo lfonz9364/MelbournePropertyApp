@@ -22,11 +22,22 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+    user = User.find(params[:id])
+    redirect_to '/users/edit'
+  end
+
+  def update
+    user = User.find(params[:id])
+    if user.update_attributes(user_params)
+    else
+      render 'edit'
+    end
+  end
+
   def destroy
     users = User.find(params[:id])
     user.destroy
-
-    # flash[:success] = "user was successfully deleted"
     redirect_to '/'
   end
 
