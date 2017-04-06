@@ -52,13 +52,15 @@ $(document).ready(function() {
 });//document ready function finished
 
 
-        var template = Handlebars.compile(source);  //turns template string
-        var html = template(property);
+  var template = Handlebars.compile(source);  //turns template string
+  var html = template(property);
 
-        $('.wrapper').append(html);
+  $('.wrapper').append(html);
       });
 
-      $('.star').on('click', function(event){
+
+
+$('.star').on('click', function(event){
         key = $(this).closest('.property').data('id');
         $.ajax({
           url: '/api/properties',
