@@ -1,24 +1,33 @@
-# README
+# README PROPERTY
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This site is currently hosted on Heroku [Link to Site](https://calm-beach-35487.herokuapp.com/).
 
-Things you may want to cover:
+## Property Planning App Overview
 
-* Ruby version
+The property planning app
 
-* System dependencies
+## Data Sets
 
-* Configuration
+* City of Melbourne [Major Developments Planning Data] (https://data.melbourne.vic.gov.au/Property-Planning/Major-development-projects-Development-Activity-Mo/gh7s-qda8).
 
-* Database creation
+* Google Maps API
 
-* Database initialization
+* User Registration Data stored in a postGres Database
 
-* How to run the test suite
+## Technical
 
-* Services (job queues, cache servers, search engines, etc.)
+###### Ruby Versions
+* ruby 2.3.3
 
-* Deployment instructions
+###### Gems/Frameworks
+* Handlebars
+* 'bcrypt', '~> 3.1.7'
 
-* ...
+###### Database
+* postgresql
+
+###### Authentication
+* Facebook & Google [OAuth] (https://developers.google.com/identity/protocols/OAuth2)
+
+###### deployment
+* Heroku

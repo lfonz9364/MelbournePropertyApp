@@ -1,40 +1,43 @@
 <h1>User <%= current_user.first_name %></h1>
 
-<div class="content-wrapper">
-  <div class="dash-console">
-    <form id="searchForm" class="" action="users/show" >
-      <div id="filter">
-        <form id="searchForm" class="" action="users/show" >
-          <h3>Filter:</h3>
-          <input type="checkbox" name="search-status" value="APPLIED" checked> Applied<br>
-          <input type="checkbox" name="search-status" value="MOOTED"> Mooted<br>
-          <input type="checkbox" name="search-status" value="ABANDONED"> Abandoned <br>
-          <input type="checkbox" name="search-status" value="COMPLETED"> Completed <br>
-          <input type="checkbox" name="search-status" value="APPROVED"> Approved <br>
-          <input type="checkbox" name="search-status" value="UNDER CONSTRUCTION"> Under Construction <br>
+<div class="dash-background">
+  <div class="content-wrapper">
+    <form action="users/show" class="results-input">
+      <nav id="profile-content">
+        <%= image_tag('profile-pic.png', id: 'profile-pic' ) %>
+        <p class="nav-li-item profile-item pi1">Welcome Back! <%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize %></p>
+        <a href="" class="nav-li-item profile-item">Profile</a>
+        <a href="" class="nav-li-item profile-item">Saves</a>
+        <a href="" class="nav-li-item profile-item">Settings</a>
+      </nav>
 
-          <input type="text" class="search-input">
-          <input type="button" class="search-btn" value="Search">
-        </form>
+      <div id="search-bar">
+        <input type="text" class="search-input">
+        <button class="search-btn">Search</button>
       </div>
+
+      <div id="searchForm">
+        <h3>Filter:</h3>
+        <input type="checkbox" name="search-status" value="APPLIED" checked> Applied<br>
+        <input type="checkbox" name="search-status" value="MOOTED"> Mooted<br>
+        <input type="checkbox" name="search-status" value="ABANDONED"> Abandoned <br>
+        <input type="checkbox" name="search-status" value="COMPLETED"> Completed <br>
+        <input type="checkbox" name="search-status" value="APPROVED"> Approved <br>
+        <input type="checkbox" name="search-status" value="UNDER CONSTRUCTION"> Under Construction <br>
+      </div>
+    </form>
+
   </div>
 
-  <div id="map" style="width: 500px; height: 400px;"></div>
-  <div class="wrapper"></div>
-
-
-  <div>
-    <nav id="profile-content">
-      <p  class="nav-li-item profile-item">Welcome Back! <%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize %></p>
-      <a href="" class="nav-li-item profile-item">Profile</a>
-      <a href="" class="nav-li-item profile-item">Saves</a>
-      <a href="" class="nav-li-item profile-item">Settings</a>
-    </nav>
+  <div id="map" style="width: 500px; height: 400px;">
+  </div>
+  <div class="wrapper">
   </div>
 </div>
 
-  <script id="property_template" type="text/x-handlebars-template">
+<a href="favourites" class="save">Save</a>
 
+<script id="property_template" type="text/x-handlebars-template">
   <div class="property" data-id="{{ development_key }}">
     <div class="field">
       <span>Address: </span>{{street_address}}
@@ -46,49 +49,32 @@
     </div>
 
     {{#if resi_dwelling}}
-
       <div class="field">
-        <span>Address: </span>{{street_address}}
+        <span>Residential Dwellings: </span>{{ resi_dwelling }}
+      </div>
+    {{else}}
+    {{/if}}
+
+    {{#if one_bdrm_dwe}}
+      <div class="field">
+        <span>No of 1 Bedrooms: </span>{{ one_bdrm_dwe }}
       </div>
 
+    {{else}}
+    {{/if}}
+
+    {{#if two_bdrm_dwe}}
       <div class="field">
-        <span>Status: </span>{{ status }}
+        <span>No of 2 Bedrooms: </span>{{ two_bdrm_dwe }}
       </div>
+    {{else}}
+    {{/if}}
 
-      {{#if resi_dwelling}}
-        <div class="field">
-          <span>Residential Dwellings: </span>{{ resi_dwelling }}
-        </div>
-
-        {{else}}
-        {{/if}}
-
-        {{#if one_bdrm_dwe}}
-          <div class="field">
-            <span>No of 1 Bedrooms: </span>{{ one_bdrm_dwe }}
-          </div>
-
-          {{else}}
-          {{/if}}
-
-        {{#if two_bdrm_dwe}}
-          <div class="field">
-            <span>No of 2 Bedrooms: </span>{{ two_bdrm_dwe }}
-          </div>
-
-          {{else}}
-          {{/if}}
-
-      {{#if town_planning_application_no}}
-        <div class="field">
-          <span>Planning Number: </span>{{ town_planning_application_no }}
-        </div>
-
-        {{else}}
-        {{/if}}
-
-    </div>
-  </script>
-
-</div>
->>>>>>> d1949be7eae2a9c16b07ded40437a306974f1ca9:app/views/sessions/show.html.erb
+    {{#if town_planning_application_no}}
+      <div class="field">
+        <span>Planning Number: </span>{{ town_planning_application_no }}
+      </div>
+    {{else}}
+    {{/if}}
+  </div>
+</script>
