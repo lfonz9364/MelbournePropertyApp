@@ -1,4 +1,3 @@
-<h1>User <%= current_user.first_name %></h1>
 
 <div class="dash-background">
   <div class="content-wrapper">
@@ -7,7 +6,7 @@
         <%= image_tag('profile-pic.png', id: 'profile-pic' ) %>
         <p class="nav-li-item profile-item pi1">Welcome Back! <%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize %></p>
         <a href="" class="nav-li-item profile-item">Profile</a>
-        <a href="" class="nav-li-item profile-item">Saves</a>
+        <a href="" class="nav-li-item profile-item save">Saves</a>
         <a href="" class="nav-li-item profile-item">Settings</a>
       </nav>
 
@@ -27,15 +26,27 @@
       </div>
     </form>
 
+    <div class="toggle">
+      <p >List</p>
+      <label class="switch">
+        <input type="checkbox" class="toggle-input">
+        <div class="slider"></div>
+      </label>
+      <p>Map</p>
+    </div>
+
   </div>
 
-  <div id="map" style="width: 500px; height: 400px;">
+  <div class="map-styling">
+    <div id="map" >
+    </div>
   </div>
+
+
   <div class="wrapper">
   </div>
 </div>
 
-<a href="favourites" class="save">Save</a>
 
 <script id="property_template" type="text/x-handlebars-template">
   <div class="property" data-id="{{ development_key }}">
@@ -78,3 +89,25 @@
     {{/if}}
   </div>
 </script>
+
+<script>
+   $('#map').css("visibility","hidden");
+   $('.wrapper').css("visibility","inherit");
+
+  $(".toggle-input").click(function(){
+    if ($(".toggle-input").prop('checked') == false){
+      $('#map').css("visibility","hidden");
+      $('.wrapper').css("visibility","inherit");
+    };
+  });
+</script>
+
+
+
+  <!-- //
+  //
+  //   if($(".toggle-input").prop('checked')== true){
+  //     $('#map').css("visibility","inherit");
+  //     $('.wrapper').css("visibility","hidden");
+  //   };
+  // }) -->

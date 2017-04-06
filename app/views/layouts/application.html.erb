@@ -3,10 +3,11 @@
   <head>
     <title>ProjectGask</title>
     <%= csrf_meta_tags %>
-    <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/pure-min.css"
-    integrity="sha384-UQiGfs9ICog+LwheBSRCt1o5cbyKIHbwjWscjemyBMT9YCUMZffs6UqUTd0hObXD"
-    crossorigin="anonymous">
+    
     <link href="https://fonts.googleapis.com/css?family=Catamaran" rel="stylesheet">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -17,6 +18,7 @@
   <body>
     <% if logged_in? %>
       <%= form_tag '/session', method: :delete do %>
+      <input type="hidden" class="id" data-id=<%= current_user.id%> >
         <nav class="login-nav">
           <a href="" id='logo-login'><%= image_tag("logo.png", id: "logo") %></a>
           <button class="logout-btn">Logout</button>
