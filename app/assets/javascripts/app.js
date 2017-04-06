@@ -33,12 +33,14 @@ function getProperty() {
 
     //click on star
     $('.star').on('click', function(event){
-      key = $(this).closest('.property').data('id');
-      if ($(this).css('color') === "rgb(0, 0, 0)"){
+
+      var key = $(this).closest('.property').data('id');
+
+      if ($(this).css('color') === "rgb(255, 255, 255)"){
         $(this).css('color', 'yellow');
         favouriteProp.push(key);
       } else {
-        $(this).css('color', 'black');
+        $(this).css('color', 'white');
         favouriteProp = $.grep(favouriteProp, function(a){return a != key;});
       }
     });
@@ -46,6 +48,28 @@ function getProperty() {
 };
 
 $(document).ready(function() {
+  $( function() {
+    var suburbs = [
+      "Carlton",
+      "Carlton North",
+      "Docklands",
+      "East Melbourne",
+      "Flemington",
+      "Jolimont",
+      "Kensington",
+      "Melbourne (CBD)",
+      "North Melbourne",
+      "Port Melbourne",
+      "Parkville",
+      "Southbank",
+      "South Wharf",
+      "South Yarra",
+      "West Melbourne"
+      ];
+    $( "#tags" ).autocomplete({
+        source: suburbs
+    });
+  });
 
   $(".search-btn").click(function(event){
     event.preventDefault();
@@ -56,14 +80,15 @@ $(document).ready(function() {
   })
 
   $('.save').on('click', function(event){
-    console.log(favouriteProp);
-    $.ajax({
-      url: '/favourites/new',
-      method: 'post',
-      data: {
-        favourites: favouriteProp
-      }
-    });
+      $.ajax({
+        url: '/favourites/new',
+        method: 'post',
+        data: {
+          user_id: Number($('.id').data('id')),
+          favourites: favouriteProp
+          }
+      });
+
   });
 });
 

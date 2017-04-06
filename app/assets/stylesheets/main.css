@@ -207,6 +207,8 @@
   margin-left: 35px;
 }
 
-.save{
-  visibility: hidden;
+.fav{
+  border: 1px solid black;
+  background-color: black;
+>>>>>>> 8cea718baa8a196ae8f6f1161c32f7e61f37b88d
 }

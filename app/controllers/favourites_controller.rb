@@ -2,6 +2,7 @@ class FavouritesController < ApplicationController
 
   def create
     favourite = Favourite.new
+    favourite.user_id = params[:user_id]
     favourite.save
     properties = params[:favourites]
 
@@ -11,9 +12,19 @@ class FavouritesController < ApplicationController
       new_property.development_key = property
       new_property.save
     end
+    redirect_to '/favourites'
   end
 
-  def show
+  def save
+    user = User.find(session['id'])
+    @fav_id = Favourite.where(user_id: user.favourites.ids)
   end
-  
+
+  def edit
+    favourite = Favourite.find(params[:fav_id])
+    favourite.name = params[:fav_name]
+    favourite.save
+    redirect_to '/favourites'
+  end
+
 end

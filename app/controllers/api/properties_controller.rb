@@ -5,10 +5,4 @@ class Api::PropertiesController < ApplicationController
   end
 
 
-  def create
-    property = Property.new
-    property.development_key = params[:development_key]
-    property.save
-  end
-
 end
