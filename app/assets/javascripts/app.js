@@ -1,3 +1,4 @@
+var favouriteProp = [];
 
 function getProperty() {
   var searchTerm = $('.search-input').val();
@@ -10,11 +11,7 @@ function getProperty() {
       status: searchStatus,
       clue_small_area: searchTerm
     }
-  }).done( function(data){
-
-    if (data.length > 0) {
-
-    }
+  }).done(function(data){
     var locations = [];
     for (var i = 0; i < data.length; i++) {
       var id = data[i].property_id
@@ -30,15 +27,23 @@ function getProperty() {
       var source = $('#property_template').html();  //gets the template
       var template = Handlebars.compile(source)  //turns template string
       var html = template(property)
+
       $('.wrapper').append(html)
     });
 
-    }).done( function(data){
-
+    //click on star
+    $('.star').on('click', function(event){
+      key = $(this).closest('.property').data('id');
+      if ($(this).css('color') === "rgb(0, 0, 0)"){
+        $(this).css('color', 'yellow');
+        favouriteProp.push(key);
+      } else {
+        $(this).css('color', 'black');
+        favouriteProp = $.grep(favouriteProp, function(a){return a != key;});
+      }
+    });
   });
-
 };
-
 
 $(document).ready(function() {
 
@@ -49,26 +54,18 @@ $(document).ready(function() {
     }
     getProperty();
   })
-});//document ready function finished
 
-
-        var template = Handlebars.compile(source);  //turns template string
-        var html = template(property);
-
-        $('.wrapper').append(html);
-      });
-
-      $('.star').on('click', function(event){
-        key = $(this).closest('.property').data('id');
-        $.ajax({
-          url: '/api/properties',
-          method: 'post',
-          data: {
-            development_key: key
+  $('.save').on('click', function(event){
+      console.log(favouriteProp);
+      $.ajax({
+        url: '/favourites/new',
+        method: 'post',
+        data: {
+          favourites: favouriteProp
           }
-        });
       });
-    });
+  });
+});
 
 
 function initMap(locations) {
@@ -95,4 +92,4 @@ function initMap(locations) {
       }
     })(marker, i));
   }
-}
+};
