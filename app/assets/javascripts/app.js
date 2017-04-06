@@ -1,6 +1,5 @@
 var favouriteProp = [];
 
-
 function getProperty() {
   var searchTerm = $('.search-input').val();
   var searchStatus = $("input[name='search-status']:checked").val();

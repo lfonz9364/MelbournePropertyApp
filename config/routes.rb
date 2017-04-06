@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   post '/favourites/new', to: 'favourites#create'
   get '/favourites', to: 'favourites#save'
-  post '/favourites/edit', to: 'favourites#edit' 
+  post '/favourites/edit', to: 'favourites#edit'
 
   root 'pages#home'
   namespace :api do
