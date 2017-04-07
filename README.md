@@ -35,8 +35,8 @@ The Melbourne property planning app allows users to view current property planni
 ![ERD](https://github.com/SamWij/GASK/tree/master/readme/schema.jpeg)
 
 ## Wire Frames
-
-![Home Page](https://github.com/SamWij/GASK/tree/master/readme/home_page.jpeg)
+![alt text](readme/home_page.jpeg "Home Page")
+![Home Page]()
 ![logged in](https://github.com/SamWij/GASK/tree/master/readme/logged_in.jpeg)
 ![Result List](https://github.com/SamWij/GASK/tree/master/readme/result_list.jpeg)
 ![Edit](https://github.com/SamWij/GASK/tree/master/readme/edit.jpeg)
