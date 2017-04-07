@@ -2,18 +2,39 @@
 <div class="dash-background">
   <div class="content-wrapper">
     <form action="users/show" class="results-input">
-      <nav id="profile-content">
-        <%= image_tag('profile-pic.png', id: 'profile-pic' ) %>
-        <p class=" pi1">Welcome Back! <br><%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize %></p>
-        <a href="" class="nav-li-item profile-item">Profile</a>
-        <a href="" class="nav-li-item profile-item save">Save Favourites</a>
-        <a href="" class="nav-li-item profile-item display-fav">Display Favourites</a>
-        <a href="" class="nav-li-item profile-item">Settings</a>
-      </nav>
+      <div>
+        <nav id="profile-content">
+          <%= image_tag('profile-pic.png', id: 'profile-pic' ) %>
+          <p class=" pi1">Welcome Back! <br><%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize %></p>
+          <a href="" class="nav-li-item profile-item">Profile</a>
+          <a href="" class="nav-li-item profile-item save">Save Favourites</a>
+          <a href="" class="nav-li-item profile-item display-fav">Display Favourites</a>
+          <a href="" class="nav-li-item profile-item">Settings</a>
+        </nav>
 
-      <div id="search-bar">
-        <input type="text" id="tags" class="search-input">
-        <button class="search-btn">Search</button>
+        <div class="toggle">
+          <p >List</p>
+          <label class="switch">
+            <input type="checkbox" class="toggle-input">
+            <div class="slider"></div>
+          </label>
+          <p>Map</p>
+        </div>
+      </div>
+
+      <div id="search-output">
+        <div id="search-bar">
+          <input type="text" id="tags" class="search-input">
+          <button class="search-btn">Search</button>
+        </div>
+
+        <div class="map-styling">
+          <div id="map" >
+          </div>
+        </div>
+
+        <div class="wrapper">
+        </div>
       </div>
 
       <div id="searchForm">
@@ -27,24 +48,6 @@
       </div>
     </form>
 
-    <div class="toggle">
-      <p >List</p>
-      <label class="switch">
-        <input type="checkbox" class="toggle-input">
-        <div class="slider"></div>
-      </label>
-      <p>Map</p>
-    </div>
-
-  </div>
-
-  <div class="map-styling">
-    <div id="map" >
-    </div>
-  </div>
-
-
-  <div class="wrapper">
   </div>
 </div>
 
@@ -120,18 +123,20 @@
   </script>
 
 <script>
-   $('#map').css("visibility","hidden");
-   $('.wrapper').css("visibility","inherit");
+   $('#map').css("display","none");
+   $('.wrapper').css("display","block");
 
   $(".toggle-input").click(function(){
     if ($(".toggle-input").prop('checked') == false){
-      $('#map').css("visibility","hidden");
-      $('.wrapper').css("visibility","inherit");
+      $('#map').css("display","none");
+      $('.wrapper').css("display","block");
     };
 
-  if($(".toggle-input").prop('checked')== true){
-      $('#map').css("visibility","inherit");
-      $('.wrapper').css("visibility","hidden");
+    if($(".toggle-input").prop('checked')== true){
+      $('#map').css("display","block");
+      $('.wrapper').css("display","none");
     };
+
+    google.maps.event.trigger(map, 'resize');
   });
 </script>

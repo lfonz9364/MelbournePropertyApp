@@ -1,0 +1,45 @@
+@media (max-width: 762px){
+  .fav-list{
+    margin-top: 0px;
+  }
+}
+
+@media(max-width: 525px){
+  .ba-img{
+    max-width: 300px;
+  }
+  .info-updt{
+    font-size: 10px;
+  }
+}
+
+@media(max-width: 762px){
+  .results-input{
+    display: inline;
+  }
+  .search-input{
+    min-width: 65%;
+    margin-left: 4%;
+  }
+
+  .search-btn{
+    display: block;
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 10px;
+  }
+
+  #searchForm{
+    margin: 58px;
+    margin-left: 18px;
+  }
+
+  .wrapper{
+    // margin-top: -154px;
+  }
+
+  .map-styling{
+    // margin-top:262px;
+  }
+}
