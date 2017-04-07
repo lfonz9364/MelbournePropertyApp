@@ -1,4 +1,5 @@
 var favouriteProp = [];
+var map;
 
 function getProperty() {
   var searchTerm = $('.search-input').val();
@@ -94,7 +95,7 @@ $(document).ready(function() {
 
 
 function initMap(locations) {
-  var map = new google.maps.Map(document.getElementById('map'), {
+  map = new google.maps.Map(document.getElementById('map'), {
     zoom: 13,
     center: new google.maps.LatLng(-37.8136, 144.963),
     mapTypeId: google.maps.MapTypeId.ROADMAP
