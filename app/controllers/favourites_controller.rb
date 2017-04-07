@@ -27,4 +27,15 @@ class FavouritesController < ApplicationController
     redirect_to '/favourites'
   end
 
+  def destroy
+    favourite = Favourite.find(params[:fav_id])
+    properties = favourite.properties
+
+    properties.each do |property|
+      property.destroy
+    end
+
+    favourite.destroy
+    redirect_to '/favourites'
+  end
 end
