@@ -46,5 +46,5 @@ The Melbourne property planning app allows users to view current property planni
 * Clear decision making and solutioning.
 
 ## Items to complete
-
+* navigation throughout the site (menu bar doesn't work)
 * Facebook and Google Authentication.  This was a should have user story which we would have liked to finish for the MVP but we ran out of time.
