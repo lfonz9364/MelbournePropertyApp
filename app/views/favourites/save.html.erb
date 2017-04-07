@@ -1,88 +1,102 @@
-<% @fav_id.each do |favourite|%>
-  <div class="fav <%= favourite.id %>">
-    <% if favourite.name %>
-      <h2><%= favourite.name %></h2>
-    <% elsif %>
-      <form action="/favourites/edit" method="post">
-        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-        <input type="hidden" name="fav_id" value="<%= favourite.id %>">
-        <label for="">Please Enter Favourites Name</label>
-        <input type="text" name="fav_name">
-        <button>save name</button>
-      </form>
+<div class="dash-background2">
+  <div class="content-wrapper2">
+    <nav id="profile-content">
+      <%= image_tag('profile-pic.png', id: 'profile-pic' ) %>
+      <p class=" pi1">Welcome Back! <br><%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize %></p>
+      <a href="" class="nav-li-item profile-item">Profile</a>
+      <a href="" class="nav-li-item profile-item save">Saves</a>
+      <a href="" class="nav-li-item profile-item">Settings</a>
+    </nav>
+  </div>
+
+  <div class="fav-list">
+    <% @fav_id.each do |favourite|%>
+      <div class="fav <%= favourite.id %>">
+        <% if favourite.name %>
+          <h2><%= favourite.name %></h2>
+        <% elsif %>
+          <form action="/favourites/edit" method="post">
+            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+            <input type="hidden" name="fav_id" value="<%= favourite.id %>">
+            <label for="">Please Enter Favourites Name</label>
+            <input type="text" name="fav_name">
+            <button>save name</button>
+          </form>
+        <% end %>
+          <% (favourite.properties).each do |property|%>
+              <script>
+              $(document).ready(function() {
+                $.ajax({
+                  url: 'https://data.melbourne.vic.gov.au/resource/xt73-zf4j.json',
+                  data: {
+                    "$limit" : 100,
+                    development_key: "<%= property.development_key %>"
+                  }
+                }).done(function(data){
+
+                    //display script template
+                  data.forEach(function(property) {
+                    var source = $('#property_template').html();  //gets the template
+                    var template = Handlebars.compile(source)  //turns template string
+                    var html = template(property)
+
+                    $(".fav.<%= property.favourite_id%>").append(html)
+                  });
+                })
+              })
+              </script>
+          <% end %>
+      </div>
     <% end %>
-      <% (favourite.properties).each do |property|%>
-          <script>
-          $(document).ready(function() {
-            $.ajax({
-              url: 'https://data.melbourne.vic.gov.au/resource/xt73-zf4j.json',
-              data: {
-                "$limit" : 100,
-                development_key: "<%= property.development_key %>"
-              }
-            }).done(function(data){
+    <div id="map" style="width: 500px; height: 400px;"></div>
+    <div class="wrapper"></div>
 
-                //display script template
-              data.forEach(function(property) {
-                var source = $('#property_template').html();  //gets the template
-                var template = Handlebars.compile(source)  //turns template string
-                var html = template(property)
+    <script id="property_template" type="text/x-handlebars-template">
 
-                $(".fav.<%= property.favourite_id%>").append(html)
-              });
-            })
-          })
-          </script>
-      <% end %>
-  </div>
-<% end %>
-<div id="map" style="width: 500px; height: 400px;"></div>
-<div class="wrapper"></div>
-
-<script id="property_template" type="text/x-handlebars-template">
-
-<div class="property" data-id="{{ development_key }}">
-  <div class="field">
-    <span>Address: </span>{{street_address}}
-    <span class="star">&#9733;</span>
-  </div>
-
-  <div class="field">
-    <span>Status: </span>{{ status }}
-  </div>
-
-    {{#if resi_dwelling}}
+    <div class="property" data-id="{{ development_key }}">
       <div class="field">
-        <span>Residential Dwellings: </span>{{ resi_dwelling }}
+        <span>Address: </span>{{street_address}}
+        <span class="star">&#9733;</span>
       </div>
 
-      {{else}}
-      {{/if}}
-
-      {{#if one_bdrm_dwe}}
-        <div class="field">
-          <span>No of 1 Bedrooms: </span>{{ one_bdrm_dwe }}
-        </div>
-
-        {{else}}
-        {{/if}}
-
-      {{#if two_bdrm_dwe}}
-        <div class="field">
-          <span>No of 2 Bedrooms: </span>{{ two_bdrm_dwe }}
-        </div>
-
-        {{else}}
-        {{/if}}
-
-    {{#if town_planning_application_no}}
       <div class="field">
-        <span>Planning Number: </span>{{ town_planning_application_no }}
+        <span>Status: </span>{{ status }}
       </div>
 
-      {{else}}
-      {{/if}}
+        {{#if resi_dwelling}}
+          <div class="field">
+            <span>Residential Dwellings: </span>{{ resi_dwelling }}
+          </div>
 
+          {{else}}
+          {{/if}}
+
+          {{#if one_bdrm_dwe}}
+            <div class="field">
+              <span>No of 1 Bedrooms: </span>{{ one_bdrm_dwe }}
+            </div>
+
+            {{else}}
+            {{/if}}
+
+          {{#if two_bdrm_dwe}}
+            <div class="field">
+              <span>No of 2 Bedrooms: </span>{{ two_bdrm_dwe }}
+            </div>
+
+            {{else}}
+            {{/if}}
+
+        {{#if town_planning_application_no}}
+          <div class="field">
+            <span>Planning Number: </span>{{ town_planning_application_no }}
+          </div>
+
+          {{else}}
+          {{/if}}
+
+      </div>
+
+    </script>
   </div>
-
-</script>
+</div>
