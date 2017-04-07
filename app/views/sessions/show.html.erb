@@ -4,7 +4,7 @@
     <form action="users/show" class="results-input">
       <nav id="profile-content">
         <%= image_tag('profile-pic.png', id: 'profile-pic' ) %>
-        <p class="nav-li-item profile-item pi1">Welcome Back! <%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize %></p>
+        <p class=" pi1">Welcome Back! <br><%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize %></p>
         <a href="" class="nav-li-item profile-item">Profile</a>
         <a href="" class="nav-li-item profile-item save">Saves</a>
         <a href="" class="nav-li-item profile-item">Settings</a>

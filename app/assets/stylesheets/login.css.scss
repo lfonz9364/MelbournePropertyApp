@@ -74,6 +74,7 @@
   padding-left: 8px;
   outline: thin;
   color: black;
+  transition: 0.5s;
 }
 
 .signup-input1{
@@ -85,6 +86,11 @@
   outline: thin;
   margin-top: 15px;
   color: black;
+  transition: 1s;
+}
+
+.signup-input1:focus, .signup-input:focus{
+  border-bottom: 1px solid grey;
 }
 
 .sn-logo{
@@ -148,8 +154,9 @@ h3{
   border: none;
   margin: 5px;
   color: #ecf0f1;
-  border-radius: 10px;
+  border-radius: 8px;
   width: 80px;
+  height: 30px;
 }
 
 .signup-btn:active, .signup-btn:hover{
