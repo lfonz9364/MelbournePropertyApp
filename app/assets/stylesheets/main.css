@@ -214,6 +214,8 @@
 }
 
 .fav{
+  border: 10px solid blue;
+  background-color: black;
   max-width: 372px;
   margin: 0 auto;
 }
