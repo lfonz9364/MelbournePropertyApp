@@ -17,7 +17,7 @@ class FavouritesController < ApplicationController
 
   def save
     user = User.find(session['id'])
-    @fav_id = Favourite.where(user_id: user.favourites.ids)
+    @fav_id = Favourite.where(user_id: user.id)
   end
 
   def edit
