@@ -4,5 +4,4 @@ class Api::PropertiesController < ApplicationController
      render 'sessions/show'
   end
 
-
 end
