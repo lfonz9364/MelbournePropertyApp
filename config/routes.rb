@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   get '/users/new', to: 'users#new'
   post '/users', to: 'users#create'
-  post '/users', to: 'users#destroy'
+  delete '/users', to: 'users#destroy'
 
   get '/users/edit', to: 'users#update'
   post '/users', to: 'users#show'

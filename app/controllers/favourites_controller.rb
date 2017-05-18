@@ -22,6 +22,7 @@ class FavouritesController < ApplicationController
 
   def edit
     favourite = Favourite.find(params[:fav_id])
+    favourite.name = params[:fav_name]
     favourite.save
     redirect_to '/favourites'
   end
