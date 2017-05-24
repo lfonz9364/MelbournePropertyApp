@@ -216,13 +216,17 @@
 }
 
 .fav{
-  border: 10px solid blue;
-  background-color: black;
+  border: 10px double white;
   max-width: 372px;
   margin: 0 auto;
+  padding: 10px;
 }
 
-footer{
+.fav h2 {
+  text-align: center;
+}
+
+footer {
   display: block;
   padding: 1rem;
   font-family: 'Catamaran', sans-serif;
